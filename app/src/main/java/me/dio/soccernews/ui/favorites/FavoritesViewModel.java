@@ -17,12 +17,11 @@ public class FavoritesViewModel extends ViewModel {
     }
 
     public LiveData<List<News>> loadFavoriteNews() {
-        return SoccerNewsRepository.getInstance().getLocalDao().newsDao().loadFavoriteNews();
+        return SoccerNewsRepository.getInstance().getLocalDb().newsDao().loadFavoriteNews();
     }
 
     public void saveNews(News news) {
-        AsyncTask.execute(() -> SoccerNewsRepository.getInstance().getLocalDao().newsDao
-                ().save(news));
+        AsyncTask.execute(() -> SoccerNewsRepository.getInstance().getLocalDb().newsDao().save(news));
     }
 
 }

@@ -43,8 +43,12 @@ public class SoccerNewsRepository {
         return LazyHolder.INSTANCE;
     }
 
+    public void getLocalDao() {
+
+}
+
     private static class LazyHolder {
         private static final SoccerNewsRepository INSTANCE = new SoccerNewsRepository();
     }
-    //endregion
 }
+    //endregion
