@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SoccerNewsRepository {
 
     //region Constantes
-    private static final String REMOTE_API_URL = "https://digitalinnovationone.github.io/soccer-news-api/";
+    private static final String REMOTE_API_URL = "https://aline-moraes.github.io/soccer-news-api/";
     private static final String LOCAL_DB_NAME = "soccer-news";
     //endregion
 
@@ -43,8 +43,12 @@ public class SoccerNewsRepository {
         return LazyHolder.INSTANCE;
     }
 
+    public void getLocalDao() {
+
+}
+
     private static class LazyHolder {
         private static final SoccerNewsRepository INSTANCE = new SoccerNewsRepository();
     }
-    //endregion
 }
+    //endregion
