@@ -44,14 +44,16 @@ public class NewsViewModel extends ViewModel {
             @Override
             public void onFailure(@NonNull Call<List<News>> call, Throwable error) {
                 //FIXME Tirar o printStackTrace quando formos para produção!
-                error.printStackTrace();
+
                 state.setValue(State.ERROR);
             }
         });
     }
 
     public void saveNews(News news) {
-        AsyncTask.execute(() -> SoccerNewsRepository.getInstance().getLocalDb().newsDao().save(news));
+        AsyncTask.execute(() -> {
+            SoccerNewsRepository.getInstance().getLocalDao().newsDao().save(news);
+        });
     }
 
     public LiveData<List<News>> getNews() {
